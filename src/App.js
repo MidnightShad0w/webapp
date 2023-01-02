@@ -14,8 +14,6 @@ function App() {
 
   useEffect(() => {
     tele.ready();
-    tele.BackButton.isVisible(true)
-    tele.BackButton.onClick(setHidden(true))
   });
 
   const onAdd = (food) => {
@@ -50,6 +48,11 @@ function App() {
     tele.MainButton.onClick(() => tele.close());
   };
 
+  const showBackBtn = () => {
+    // tele.BackButton.show()
+    tele.onEvent('backButtonClicked', () => setHidden(true))
+  }
+
   return (
     <>
       <h1 className="heading">ECO - FUTURE</h1>
@@ -57,7 +60,7 @@ function App() {
 
       <div className="cards__container">
         {isHidden ? 
-        <Categories setHidden={setHidden}/> 
+        <Categories setHidden={setHidden} showBackBtn={showBackBtn}/> 
         : 
         foods.map((food) => {
           return (

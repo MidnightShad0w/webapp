@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import './Categories.css'
 import Button from "../Button/Button";
 import salad from './Category_images/salad.png'
 
-function Categories(props){
+function Categories({ setHidden, showBackBtn }){
 
     return(
         <>
@@ -17,7 +17,7 @@ function Categories(props){
                     </h4>
 
                     <div className="btn-container">
-                        <Button title={"К товарам"} type={"checkout"} onClick={() => props.setHidden(false)} />
+                        <Button title={"К товарам"} type={"checkout"} onClick={() => {setHidden(false); showBackBtn()}} />
                     </div>
                 </div>
 
@@ -30,7 +30,7 @@ function Categories(props){
                     </h4>
 
                     <div className="btn-container">
-                        <Button title={"К товарам"} type={"checkout"} onClick={''} />
+                        <Button title={"К товарам"} type={"checkout"} onClick={() => setHidden(false)} />
                     </div>
                 </div>
 
@@ -43,7 +43,7 @@ function Categories(props){
                     </h4>
 
                     <div className="btn-container">
-                        <Button title={"К товарам"} type={"checkout"} onClick={''} />
+                        <Button title={"К товарам"} type={"checkout"} onClick={() => setHidden(false)} />
                     </div>
                 </div>
             </div>
