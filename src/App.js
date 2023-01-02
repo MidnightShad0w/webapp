@@ -43,7 +43,7 @@ function App() {
   const onCheckout = () => {
     tele.MainButton.text = "Pay :)";
     tele.MainButton.show();
-    tele.close();
+    tele.MainButton.onClick(() => tele.close());
   };
 
   return (
