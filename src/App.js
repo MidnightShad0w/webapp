@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import Card from "./Components/Card/Card";
 import Cart from "./Components/Cart/Cart";
+import Categories from "./Components/Categories/Categories"
 const { getData } = require("./db/db");
 const foods = getData();
 
@@ -9,9 +10,12 @@ const tele = window.Telegram.WebApp;
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
+  const [isHidden, setHidden] = useState(true)
 
   useEffect(() => {
     tele.ready();
+    tele.BackButton.isVisible(true)
+    tele.BackButton.onClick(setHidden(true))
   });
 
   const onAdd = (food) => {
@@ -50,12 +54,17 @@ function App() {
     <>
       <h1 className="heading">ECO - FUTURE</h1>
       <Cart cartItems={cartItems} onCheckout={onCheckout}/>
+
       <div className="cards__container">
-        {foods.map((food) => {
+        {isHidden ? 
+        <Categories setHidden={setHidden}/> 
+        : 
+        foods.map((food) => {
           return (
             <Card food={food} key={food.id} onAdd={onAdd} onRemove={onRemove} />
           );
-        })}
+        })
+        }
       </div>
     </>
   );
