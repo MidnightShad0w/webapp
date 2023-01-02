@@ -50,8 +50,8 @@
 }
 
 .btn.checkout:hover {
-  background-color: rgb(41, 141, 41);
+  background-color: #16db89b4;
 }
 .btn.checkout:active {
-  background-color: rgb(30, 93, 41);
+  background-color: #16db898a;
 }
