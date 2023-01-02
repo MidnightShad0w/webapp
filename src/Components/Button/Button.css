@@ -1,5 +1,5 @@
 :root {
-  --primary-color: #e0c521;
+  --primary-color: #16DB89;
 }
 
 .btn {
@@ -11,7 +11,7 @@
   border-radius: 10px;
   width: 120px;
   margin-left: 10px;
-  box-shadow: 1px -3px 52px -5px rgba(0, 0, 0, 0.77);
+  box-shadow: 1px -3px 22px -5px rgba(0, 0, 0, 0.17);
   cursor: pointer;
 }
 
@@ -24,7 +24,7 @@
 }
 
 .btn.checkout {
-  background-color: rgb(38, 121, 38);
+  background-color: #06B86E;
   width: 150px;
   color: #fff;
   font-size: 14px;
@@ -35,11 +35,11 @@
 }
 
 .btn.add:hover {
-  background-color: #cab320;
+  background-color: #19c07a;
 }
 
 .btn.add:active {
-  background-color: #ad9a1c;
+  background-color: #16db89b4;
 }
 
 .btn.remove:hover {

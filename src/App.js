@@ -41,14 +41,14 @@ function App() {
   };
 
   const onCheckout = () => {
-    tele.MainButton.text = "Pay :)";
+    tele.MainButton.text = "Отправить заказ";
     tele.MainButton.show();
     tele.MainButton.onClick(() => tele.close());
   };
 
   return (
     <>
-      <h1 className="heading">Order Food</h1>
+      <h1 className="heading">ECO - FUTURE</h1>
       <Cart cartItems={cartItems} onCheckout={onCheckout}/>
       <div className="cards__container">
         {foods.map((food) => {
