@@ -48,9 +48,9 @@ function App() {
     tele.MainButton.onClick(() => tele.close());
   };
 
-  const showBackBtn = () => {
-    // tele.BackButton.show()
-    tele.onEvent('backButtonClicked', () => setHidden(true))
+  const showBackBtn = () => { // 6.0???????????
+    tele.BackButton.show()
+    tele.BackButton.onClick(() => setHidden(true))
   }
 
   return (
