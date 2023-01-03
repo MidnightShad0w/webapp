@@ -50,7 +50,7 @@ function App() {
 
   const showBackBtn = () => { // 6.0???????????
     tele.BackButton.show()
-    tele.BackButton.onClick(() => setHidden(true))
+    tele.BackButton.onClick(() => {setHidden(true); tele.BackButton.hide()})
   }
 
   return (
