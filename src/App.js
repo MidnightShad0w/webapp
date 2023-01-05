@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 import "./App.css";
 import Card from "./Components/Card/Card";
 import Cart from "./Components/Cart/Cart";
-import Categories from "./Components/Categories/Categories"
+import Categories from "./Categories/Categories";
 const { getData } = require("./db/db");
 const foods = getData();
 
@@ -10,7 +11,8 @@ const tele = window.Telegram.WebApp;
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
-  const [isHidden, setHidden] = useState(true)
+  const [isHidden, setHidden] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     tele.ready();
@@ -43,12 +45,10 @@ function App() {
   };
 
   const onCheckout = () => {
-    tele.MainButton.text = "Отправить заказ";
-    tele.MainButton.show();
-    tele.MainButton.onClick(() => tele.close());
+    navigate('/feedback')
   };
 
-  const showBackBtn = () => { // 6.0???????????
+  const showBackBtn = () => {
     tele.BackButton.show()
     tele.BackButton.onClick(() => {setHidden(true); tele.BackButton.hide()})
   }
