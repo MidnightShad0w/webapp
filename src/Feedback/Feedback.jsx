@@ -62,9 +62,10 @@ function Feedback(){
                         className="input__field"
                         id="name"
                         type="text"
-                        // placeholder={'ФИО'}
+                        // placeholder={''}
                         value={name}
                         onChange={onChangeName}
+                        required
                     />
                     <label htmlFor="name">ФИО</label>
                 </div>
@@ -73,9 +74,10 @@ function Feedback(){
                         className="input__field"
                         id="phone"
                         type="text"
-                        // placeholder={'Телефон'}
+                        // placeholder={''}
                         value={phone}
                         onChange={onChangePhone}
+                        required
                     />
                     <label htmlFor="phone">Телефон</label>
                 </div>
@@ -84,9 +86,10 @@ function Feedback(){
                         className="input__field"
                         id="address"
                         type="text"
-                        // placeholder={'Адрес'}
+                        // placeholder={''}
                         value={address}
                         onChange={onChangeAddress}
+                        required
                     />
                     <label htmlFor="address">Адрес</label>
                 </div>
