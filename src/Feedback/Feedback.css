@@ -11,7 +11,7 @@ body{
 
 input{
     width: 300px;
-    height: 35px;
+    height: 50px;
     border: 0;
     border-bottom: 2px solid #16DB89;
     background: transparent;
@@ -21,7 +21,7 @@ input{
     flex-direction: column;
     margin-top: 15px;
     padding-left: 10px;
-    font-size: 16px;
+    font-size: 18px;
 }
 input:focus{
     outline: 0;
@@ -31,13 +31,13 @@ label{
     padding-left: 5px;
     color: rgb(128, 128, 128);
     pointer-events: none;
-    transition: 0.2s ease all;
-    transform: translateY(25px);
+    transition: 0.3s ease all;
+    transform: translateY(40px);
 }
   
 input:focus ~ label,
 input:not(:focus):valid ~ label{
-    transform: translateY(5px);
+    transform: translateY(15px);
     color: #06213C;
     /* font-size: 14px; */
 }
