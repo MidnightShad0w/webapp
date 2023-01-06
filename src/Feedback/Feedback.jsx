@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 
 import './Feedback.css';
@@ -14,13 +14,13 @@ function Feedback(){
     const navigate = useNavigate();
 
 
-    const onSendData = useCallback(() => {
-        const data = {
-            name,
-            phone,
-            address
-        }
-    }, [name, phone, address])
+    // const onSendData = useCallback(() => {
+    //     const data = {
+    //         name,
+    //         phone,
+    //         address
+    //     }
+    // }, [name, phone, address])
 
     useEffect(() => {
         tele.BackButton.show()
