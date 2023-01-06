@@ -1,0 +1,51 @@
+body{
+    background-color: #ffffff;
+    color: #06213C;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+}
+
+input{
+    width: 250px;
+    height: 30px;
+    border: 0;
+    border-bottom: 2px solid #16DB89;
+    background: transparent;
+}
+.input{
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    padding-left: 10px;
+}
+input:focus{
+    outline: 0;
+}
+label{
+    order: -1;
+    padding-left: 5px;
+    color: rgb(128, 128, 128);
+    pointer-events: none;
+    transition: all 0.3s ease;
+    transform: translateY(20px);
+}
+  
+input:focus + label{
+    transform: translateY(0);
+    color: #06213C;
+    /* font-size: 14px; */
+}
+
+
+@keyframes titleup {
+    0%{
+        transform: translateY(0px)
+    }
+    100%{
+        transform: translateY(25px)
+    }
+}

@@ -49,6 +49,6 @@ function Categories({ setHidden, showBackBtn }){
             </div>
         </>
     )
-}
+};
 
 export default Categories;
