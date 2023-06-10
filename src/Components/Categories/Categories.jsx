@@ -1,7 +1,7 @@
 // import { useState, useEffect } from "react";
 import './Categories.css'
-import Button from '../Components/Button/Button';
-import salad from '../images/salad.png';
+import Button from '../Button/Button';
+import salad from '../../images/salad.png';
 
 function Categories({ setHidden, showBackBtn }){
 
@@ -49,6 +49,6 @@ function Categories({ setHidden, showBackBtn }){
             </div>
         </>
     )
-};
+}
 
 export default Categories;

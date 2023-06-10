@@ -3,7 +3,7 @@ import {useNavigate} from 'react-router-dom';
 import "./App.css";
 import Card from "./Components/Card/Card";
 import Cart from "./Components/Cart/Cart";
-import Categories from "./Categories/Categories";
+import Categories from "./Components/Categories/Categories";
 
 const {getData} = require("./db/db");
 const foods = getData();
@@ -14,6 +14,7 @@ function App() {
     const [cartItems, setCartItems] = useState([]);
     const [isHidden, setHidden] = useState(true);
     const navigate = useNavigate();
+    const [token, setToken] = useState();
 
     useEffect(() => {
         tele.ready();
@@ -75,6 +76,6 @@ function App() {
             </div>
         </>
     );
-};
+}
 
 export default App;
