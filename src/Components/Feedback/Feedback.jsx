@@ -96,6 +96,6 @@ function Feedback(){
             </div>
         </>
     )
-};
+}
 
 export default Feedback;

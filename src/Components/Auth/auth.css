@@ -1,0 +1,113 @@
+body{
+    background-color: #ffffff;
+    color: #06213C;
+}
+.heading{
+    text-align: center;
+}
+.main-container-auth{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.dropdown-container{
+    width: 300px;
+    /*margin: 15px 45px;*/
+    /*border: 1px solid black;*/
+    border-radius: 15px;
+    background-color: #a1b0ff;
+}
+.dropdown-control{
+    /*border: 1px solid yellow;*/
+    border-radius: 15px;
+    height: 1.5em;
+    display: flex;
+    justify-content: space-between;
+
+    padding: 0 10px;
+
+    transition: all 200ms ease;
+}
+.dropdown-control:hover {
+    background-color: #8d97d9;
+    transition: all 300ms ease;
+}
+.dropdown-menu{
+    /*border: 1px solid green;*/
+    margin: 0 10px;
+    border-top: 2px solid #06213C;
+    /*border-radius: 15px;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.dropdown-placeholder{
+    /*width: 70%;*/
+    /*border: 1px solid red;*/
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.Dropdown-arrow-wrapper{
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*margin-left: 150px;*/
+}
+.arrow-closed, .arrow-open {
+    border: solid black;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 4px;
+    /*position: absolute;*/
+    /*right: 16vw;*/
+    /*margin-left: 7px;*/
+    /*margin-bottom: 2px;*/
+    /*margin-right: 5px;*/
+    transition: all 300ms ease;
+}
+.arrow-closed {
+    /*top: 152px;*/
+    margin-bottom: 5px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+.arrow-open {
+    /*top: 155px;*/
+    margin-top: 2px;
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+.Dropdown-option{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    padding: 2px 0;
+}
+.Dropdown-option:hover {
+    background-color: #8d97d9;
+    transition: all 300ms ease;
+}
+
+
+
+.input__field__auth{
+    width: 300px;
+    height: 30px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 2px solid #a1b0ff;
+    background: transparent;
+}
+.input-auth{
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*align-items: center;*/
+    margin: 15px 0;
+    padding-left: 10px;
+    font-size: 18px;
+}
