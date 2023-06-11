@@ -7,7 +7,7 @@ import Dropdown from 'react-dropdown'
 const addresses = ['ул.Братиславская д.5 к.4 с.1', 'b', 'c'];
 
 function Auth() {
-    const [token, setToken] = useState('');
+    // const [token, setToken] = useState('');
     const [address, setAddress] = useState();
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
