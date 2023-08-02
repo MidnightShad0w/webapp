@@ -14,24 +14,32 @@ function App() {
     const [cartItems, setCartItems] = useState([]);
     const [isHidden, setHidden] = useState(true);
     const navigate = useNavigate();
-    const [token, setToken] = useState();
+    // const [token, setToken] = useState();
 
     useEffect(() => {
         tele.ready();
     });
 
-    const onAdd = (food) => {
-        const exist = cartItems.find((x) => x.id === food.id);
+    const onAdd = (food, type, count) => {
+        console.log('selectedType in onAdd == ' + type)
+        const count2 = Number(count)
+        const exist = cartItems.find((x) => x.id === food.id && x.type === type);
         if (exist) {
             setCartItems(
                 cartItems.map((x) =>
-                    x.id === food.id ? {...exist, quantity: exist.quantity + 1} : x
+                    // x.id === food.id ? {...exist, quantity: exist.quantity + 1} : x
+                    // x.id === food.id && x.type === type ? {...exist, type: type, quantity: exist.quantity + count2} : x
+                        x.id === food.id && x.type === type ? {...exist, quantity: exist.quantity + count2} : x
+                    //todo: нужно чтобы при выборе 1-pizza pack => добавлялся pizza pack, 2-pizza kg => добавился pizza kg --- т е как две позиции
                 )
             );
         } else {
-            setCartItems([...cartItems, {...food, quantity: 1}]);
+            // setCartItems([...cartItems, {...food, quantity: 1}]);
+            setCartItems([...cartItems, {...food, type: type, quantity: count2}]);
         }
     };
+
+    console.log(cartItems)
 
     const onRemove = (food) => {
         const exist = cartItems.find((x) => x.id === food.id);
@@ -40,7 +48,7 @@ function App() {
         } else {
             setCartItems(
                 cartItems.map((x) =>
-                    x.id === food.id ? {...exist, quantity: exist.quantity - 1} : x
+                    x.id === food.id ? {...exist, quantity: 0} : x
                 )
             );
         }

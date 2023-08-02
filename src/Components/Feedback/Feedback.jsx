@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
-
+import { useSelector } from 'react-redux';
 import './Feedback.css';
 
 
@@ -9,10 +9,10 @@ const tele = window.Telegram.WebApp;
 function Feedback(){
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
-    const [address, setAddress] = useState('');
 
     const navigate = useNavigate();
 
+    const address = useSelector(state => state.addressValue.value);
 
     // const onSendData = useCallback(() => {
     //     const data = {
@@ -24,16 +24,16 @@ function Feedback(){
 
     useEffect(() => {
         tele.BackButton.show()
-        tele.BackButton.onClick(() => {navigate('/'); tele.BackButton.hide()})
+        tele.BackButton.onClick(() => {navigate('/app'); tele.BackButton.hide()})
     },[navigate])//?
 
     useEffect(() => {
-        if(!name || !phone || !address) {
+        if(!name || !phone) {
             tele.MainButton.hide();
         } else {
             tele.MainButton.show();
         }
-    }, [name, phone, address])
+    }, [name, phone])
 
     useEffect(() => {
         tele.MainButton.text = "Отправить заказ";
@@ -49,14 +49,11 @@ function Feedback(){
         setPhone(e.target.value)
     }
 
-    const onChangeAddress = (e) => {
-        setAddress(e.target.value)
-    }
-
     return(
         <>
             <div className="form">
                 <h3 className="form__title">Введите данные для заказа</h3>
+                <div>Current address: {address}</div>
                 <div className='input'>
                     <input
                         className="input__field"
@@ -81,18 +78,18 @@ function Feedback(){
                     />
                     <label htmlFor="phone">Телефон</label>
                 </div>
-                <div className='input'>
-                    <input
-                        className="input__field"
-                        id="address"
-                        type="text"
-                        // placeholder={''}
-                        value={address}
-                        onChange={onChangeAddress}
-                        required
-                    />
-                    <label htmlFor="address">Адрес</label>
-                </div>
+                {/*<div className='input'>*/}
+                {/*    <input*/}
+                {/*        className="input__field"*/}
+                {/*        id="address"*/}
+                {/*        type="text"*/}
+                {/*        // placeholder={''}*/}
+                {/*        value={address}*/}
+                {/*        onChange={onChangeAddress}*/}
+                {/*        required*/}
+                {/*    />*/}
+                {/*    <label htmlFor="address">Адрес</label>*/}
+                {/*</div>*/}
             </div>
         </>
     )

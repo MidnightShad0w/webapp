@@ -55,3 +55,17 @@
 .btn.checkout:active {
   background-color: #16db898a;
 }
+
+.btn.foodType {
+  background-color: #bebebe;
+}
+.btn.foodType:hover {
+  background-color: #a4a4a4;
+}
+
+/*.btn.foodType:active {*/
+/*  border: solid black 1px;*/
+/*}*/
+.foodType-active {
+  border: solid black 1px;
+}

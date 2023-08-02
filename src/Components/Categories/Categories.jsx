@@ -30,7 +30,7 @@ function Categories({ setHidden, showBackBtn }){
                     </h4>
 
                     <div className="btn-container">
-                        <Button title={"К товарам"} type={"checkout"} onClick={() => setHidden(false)} />
+                        <Button title={"К товарам"} type={"checkout"} onClick={() => {setHidden(false); showBackBtn()}} />
                     </div>
                 </div>
 
@@ -43,7 +43,7 @@ function Categories({ setHidden, showBackBtn }){
                     </h4>
 
                     <div className="btn-container">
-                        <Button title={"К товарам"} type={"checkout"} onClick={() => setHidden(false)} />
+                        <Button title={"К товарам"} type={"checkout"} onClick={() => {setHidden(false); showBackBtn()}} />
                     </div>
                 </div>
             </div>

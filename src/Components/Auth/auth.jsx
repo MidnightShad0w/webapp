@@ -3,6 +3,8 @@ import Button from "../Button/Button";
 import React, {useState} from "react";
 import {useNavigate} from "react-router-dom";
 import Dropdown from 'react-dropdown'
+import { useDispatch } from 'react-redux';
+import { updateAddress} from "../../actions";
 
 const addresses = ['ул.Братиславская д.5 к.4 с.1', 'b', 'c'];
 
@@ -12,6 +14,7 @@ function Auth() {
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const onLogin = () => {
         navigate('/app')
@@ -20,8 +23,9 @@ function Auth() {
     const handleAddressValue = (option) => {
         const addressValue = option.value
         setAddress(addressValue)
+        console.log(addressValue)
+        dispatch(updateAddress(addressValue))
     }
-
 
     return (
         <>
@@ -33,7 +37,6 @@ function Auth() {
                     controlClassName="dropdown-control"
                     menuClassName="dropdown-menu"
                     placeholderClassName="dropdown-placeholder"
-                    // arrowClassName="arrow"
                     arrowClosed={<span className="arrow-closed"/>}
                     arrowOpen={<span className="arrow-open"/>}
                     options={addresses}
@@ -44,7 +47,7 @@ function Auth() {
                 <div className='input-auth'>
                     <input
                         className="input__field__auth"
-                        id="name"
+                        id="Login"
                         type="text"
                         placeholder={'Login'}
                         value={login}
@@ -55,8 +58,9 @@ function Auth() {
                 <div className='input-auth'>
                     <input
                         className="input__field__auth"
-                        id="phone"
-                        type="text"
+                        name="password"
+                        id="password"
+                        type="password"
                         placeholder={'Password'}
                         value={password}
                         onChange={e => setPassword(e.target.value)}
